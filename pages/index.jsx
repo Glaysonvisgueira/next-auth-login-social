@@ -154,12 +154,16 @@ export default function Home() {
           GITHUB
         </GithubButton>
 
-        {/* <FacebookButton>
+        <FacebookButton onClick={() => signIn("facebook")}>
           <FacebookSquare />
           FACEBOOK
         </FacebookButton>
 
-        <OutlookButton>
+        <InstagramButton onClick={() => signIn("instagram")}>
+          <Instagram /> INSTAGRAM
+        </InstagramButton>
+
+        {/* <OutlookButton>
           <Microsoftoutlook />
           OUTLOOK
         </OutlookButton>
@@ -172,9 +176,7 @@ export default function Home() {
           <DiscordAlt /> DISCORD
         </DiscordButton>
 
-        <InstagramButton>
-          <Instagram /> INSTAGRAM
-        </InstagramButton>
+        
 
         <TwitchButton>
           <Twitch /> TWITCH

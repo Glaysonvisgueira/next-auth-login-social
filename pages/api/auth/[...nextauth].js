@@ -1,6 +1,8 @@
+import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import GitHubProvider from "next-auth/providers/github";
-import NextAuth from "next-auth";
+import FacebookProvider from "next-auth/providers/facebook";
+import InstagramProvider from "next-auth/providers/instagram";
 
 export const authOptions = { 
   providers: [
@@ -25,6 +27,28 @@ export const authOptions = {
           response_type: "code",
         },
       }, 
+  }),
+  FacebookProvider({
+    clientId: process.env.FACEBOOK_CLIENT_ID,
+    clientSecret: process.env.FACEBOOK_CLIENT_SECRET,    
+    authorization: {     
+        params: {
+          prompt: "consent",
+          access_type: "offline",
+          response_type: "code",
+        },
+      },
+  }),
+  InstagramProvider({
+    clientId: process.env.INSTAGRAM_CLIENT_ID,
+    clientSecret: process.env.INSTAGRAM_CLIENT_SECRET,
+    authorization: {     
+        params: {
+          prompt: "consent",
+          access_type: "offline",
+          response_type: "code",
+        },
+      },
   })
   ],
 
